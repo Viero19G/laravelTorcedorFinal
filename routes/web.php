@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Cidades01Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::prefix('/cidades')->name('cidades.')->group( function(){
+    Route::get('/', [Cidades01Controller::class, 'index'])->name('index');
 });
